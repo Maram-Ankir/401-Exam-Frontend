@@ -51,10 +51,10 @@ export class Favourite extends Component {
     }
 
     updateNameFun=(e=>this.setState({
-        strDrink:e.target.valuee}))
+        strDrink:e.target.value}))
 
     updateImageFun=(e=>this.setState({
-        strDrinkThumb:e.target.valuee}))
+        strDrinkThumb:e.target.value}))
 
         updateCocktaile= async(e)=>{
             e.preventDefault();
@@ -63,7 +63,7 @@ export class Favourite extends Component {
                 strDrink:this.state.strDrink,
                 strDrinkThumb:this.state.strDrinkThumb
             }
-            let updateCocktaile = await axios.put(`${this.state.serverLink}/updateCoctail/${id}`)
+            let updateCocktaile = await axios.put(`${this.state.serverLink}/updateCoctail/${id}`,cocktailData)
             this.setState({
                 cocktailArr:updateCocktaile.data
             })
